@@ -53,4 +53,4 @@ Yes, yes, I know... while a simple blog may not be the most fascinating applicat
 
 ## Contact
 
-If you have questions about the material, or simply want to say hi, you can contact me on my website at [joeymckenzie.tech](https://joeymckenzie.tech/)
+If you have questions about the material, or simply want to say hi, you can contact me on my website at [joeymckenzie.tech](https://joeymckenzie.tech/) or email at [joey.mckenzie27@gmail.com](mailto:joey.mckenzie27@gmail.com)

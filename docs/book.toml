@@ -1,0 +1,6 @@
+[book]
+authors = ["Joey McKenzie"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Fullstack Rust"

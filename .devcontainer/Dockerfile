@@ -10,7 +10,9 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 # Add tools and CLIs we'll need using cargo
 RUN cargo install trunk \
     && cargo install cargo-make \
-    && cargo install sqlx-cli --no-default-features --features native-tls,mysql
+    && cargo install cargo-watch \
+    && cargo install sqlx-cli --no-default-features --features native-tls,mysql \
+    && cargo install mdbook
 
 # Add the Planetscale CLI
 ARG PSCALE_VERSION=0.125.0

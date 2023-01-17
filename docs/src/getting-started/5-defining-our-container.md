@@ -22,23 +22,31 @@ We should see a new folder named `.devcontainer` with a single file underneath i
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/rust
 {
- "name": "Rust",
- // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
- "image": "mcr.microsoft.com/devcontainers/rust:0-1-bullseye"
+  "name": "Rust",
+  // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+  "image": "mcr.microsoft.com/devcontainers/rust:0-1-bullseye"
 
- // Features to add to the dev container. More info: https://containers.dev/features.
- // "features": {},
+  // Features to add to the dev container. More info: https://containers.dev/features.
+  // "features": {},
 
- // Use 'forwardPorts' to make a list of ports inside the container available locally.
- // "forwardPorts": [],
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  // "forwardPorts": [],
 
- // Use 'postCreateCommand' to run commands after the container is created.
- // "postCreateCommand": "rustc --version",
+  // Use 'postCreateCommand' to run commands after the container is created.
+  // "postCreateCommand": "rustc --version",
 
- // Configure tool-specific properties.
- // "customizations": {},
+  // Configure tool-specific properties.
+  // "customizations": {},
 
- // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
- // "remoteUser": "root"
+  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+  // "remoteUser": "root"
 }
 ```
+
+So far so good. Not too many options pre-configured for us, and the only property we're concerned about _so far_ is the `image` value. We see that it's pulling a base image from Microsoft's container registry with rust pre-configured for us. Sweet!
+
+## Running our container
+
+Now the fun part - starting our container! To make things easy on us, the dev container extension offers options to start our container, but there's also a [CLI](https://containers.dev/supporting#devcontainer-cli) if you're more inclined to handle container management in your terminal. At the end the day, all we're doing is simply managing local Docker containers. Back in VS Code let's take a look at the dev container options again. Open the options menu for the Dev Containers extension like we did before and take a look at the build options. We should see an option to build/rebuild our container - go ahead and select the option to build the container. We should VS Code open in a new window and a message on the bottom indicating our container is being built!
+
+Taking a look at the output log by clicking on the toast message reveals the normal Docker process of pulling base images, installing things, copying things, etc. Once it's all said and done, we should be in a new window. Crack open the terminal with a `ctrl` + `\`` and take a look at the base path of the current directory.

@@ -1,4 +1,5 @@
 # Choosing frameworks
+
 While our choice of libraries in the Rust ecosystem is large and vast, we'll scope ourselves in to a few major framework crates to help us facilitate our application logic. I'll preface this in saying I am picking libraries _purely_ out of preference - you are more than welcome to BYOC (bring your own crates)!
 
 ## Picking a UI framework
@@ -17,7 +18,7 @@ Onto the next, our web application framework. It may not be surprising to learn 
 
 ## Picking a tool for database interaction
 
-With our UI and web frameworks of choice in place, let's take a look at crates to help us orchestrate talking with a database, making queries and mutations, handling migrations, etc. Three options come to mind: [Diesel](http://diesel.rs/), [SeaORM](https://www.sea-ql.org/SeaORM/), and [sqlx](https://docs.rs/sqlx/latest/sqlx/). While the first two options in the preceding identify more as traditional [ORM](https://en.wikipedia.org/wiki/Object%E2%80%93relational_mapping) frameworks, sqlx is more aligned as a micro-ORM providing a basic set of utilities to allow us to connect to databases, perform queries against the database server, manage connections and schemas, and my favorite feature of sqlx... compile-time checks of queries! 
+With our UI and web frameworks of choice in place, let's take a look at crates to help us orchestrate talking with a database, making queries and mutations, handling migrations, etc. Three options come to mind: [Diesel](http://diesel.rs/), [SeaORM](https://www.sea-ql.org/SeaORM/), and [sqlx](https://docs.rs/sqlx/latest/sqlx/). While the first two options in the preceding identify more as traditional [ORM](https://en.wikipedia.org/wiki/Object%E2%80%93relational_mapping) frameworks, sqlx is more aligned as a micro-ORM providing a basic set of utilities to allow us to connect to databases, perform queries against the database server, manage connections and schemas, and my favorite feature of sqlx... compile-time checks of queries!
 
 Compile-time checks enforce correct code between our data access layer and the database system. With these checks in place, we greatly reduce the risk of unforeseen errors regarding tables or columns not existing and types not aligning. As a personal preference, I tend to leverage non-ORM tools wherever I can rather than there ORM peers so the choice for me is naturally sqlx.
 
@@ -25,4 +26,4 @@ Compile-time checks enforce correct code between our data access layer and the d
 
 ## Other considerations
 
-While Yew, Axum, and SQLx will comprise the dominate framework crates in there respective layers, we'll leverage a handful of useful libraries all throughout our project to make our job a bit easier. 
+While Yew, Axum, and SQLx will comprise the dominate framework crates in there respective layers, we'll leverage a handful of useful libraries all throughout our project to make our job a bit easier.

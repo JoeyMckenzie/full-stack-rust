@@ -1,4 +1,5 @@
-**/book
+docs/
+
 /target
 
 .vscode/settings.json

@@ -1,31 +1,15 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/rust
 {
-	"name": "Fullstack Rust",
+	"name": "Rust",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"dockerFile": "Dockerfile",
+	"image": "mcr.microsoft.com/devcontainers/rust:0-1-bullseye"
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	"forwardPorts": [
-		3000, // Expose the docs port
-		8080, // Expose the dev API port, update this if needed!
-		4200 // Expose the UI dev port, update this if needed!
-	],
-	
-	"customizations": {
-		"vscode": {
-			"extensions": [
-				"yzhang.markdown-all-in-one",
-				"DavidAnson.vscode-markdownlint",
-				"rust-lang.rust-analyzer",
-				"tamasfe.even-better-toml",
-				"aaron-bond.better-comments"
-			]
-		}
-	},
+	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "rustc --version",
@@ -34,5 +18,5 @@
 	// "customizations": {},
 
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-	"remoteUser": "root"
+	// "remoteUser": "root"
 }

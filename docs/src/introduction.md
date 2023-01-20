@@ -23,7 +23,7 @@ In the traditional sense, a fullstack web application is a single experience tha
 
 Bundled together, these components form, more or less, what is commonly referred to as a fullstack application. Fullstack web application development can be found across many different language ecosystems (ASP.NET MVC, RoR, Django, etc.) with the goal of providing developers an experience typically driven by their language ecosystem of choice. 
 
-I'm of the opinion the term "fullstack" is a bit of a misnomer for the modern developer - many of us, at some point in our careers, have worked on, or inevitably _will_ work on, projects for organizations that require us to delve into the depths of the front and backend, profile pesky queries in our database, modifying IoC Terraform files in charge of deploying our services, etc. The point being that fullstack development ties the individual pieces of software development together to form a single user experience.
+I'm of the opinion the term "fullstack" is a bit of a misnomer for the modern developer - many of us, at some point in our careers, have worked on, or inevitably _will_ work on, projects for organizations that require us to delve into the depths of the front and backend, profile pesky queries in our database, modifying configuration files in charge of deploying our services, etc. The point being that fullstack development ties the individual pieces of software development together to form a single user experience.
 
 ## Why Rust?
 

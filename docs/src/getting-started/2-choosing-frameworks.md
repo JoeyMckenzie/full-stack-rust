@@ -1,6 +1,6 @@
 # Choosing frameworks
 
-While our choice of libraries in the Rust ecosystem is large and vast, we'll scope ourselves in to a few major framework crates to help us facilitate our application logic. I'll preface this in saying I am picking libraries _purely_ out of preference - you are more than welcome to BYOC (bring your own crates)!
+While our choice of libraries in the Rust ecosystem is large and vast, we'll scope ourselves into a few major framework crates to help us facilitate our application logic. I'll preface this by saying I am picking libraries _purely_ out of preference - you are more than welcome to BYOC (bring your own crates)!
 
 ## Picking a UI framework
 

@@ -1,7 +1,7 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/rust
 {
-	"name": "Fullstack Rust",
+	"name": "Full Stack Rust",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	"dockerFile": "Dockerfile",
 
@@ -22,10 +22,13 @@
 				"rust-lang.rust-analyzer",
 				"tamasfe.even-better-toml",
 				"aaron-bond.better-comments",
-				"streetsidesoftware.code-spell-checker"
+				// Optional: if you're not using grammarly, enable the spell checker plugin
+				// "streetsidesoftware.code-spell-checker",
+				// Optional: if you use grammarly, enable the plugin 
+				"znck.grammarly"
 			]
 		}
-	},
+	}
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "rustc --version",
@@ -34,5 +37,5 @@
 	// "customizations": {},
 
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-	"remoteUser": "root"
+	// "remoteUser": "root"
 }

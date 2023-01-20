@@ -3,4 +3,4 @@ authors = ["Joey McKenzie"]
 language = "en"
 multilingual = false
 src = "src"
-title = "Fullstack Rust"
+title = "Full Stack Rust"

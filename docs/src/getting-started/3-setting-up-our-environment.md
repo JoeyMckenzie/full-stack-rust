@@ -1,6 +1,6 @@
 # Setting up our environment
 
-Now to put our fingers-to-keyboard, so to speak. As our project begins to expand, we'll want to ensure a seamless developer setup experience, making the onboard process for newer devs easy and hassle free. For our local development, we'll obviously need a Rust installation and few tools to ensure we can work within the context of any project at any given time.
+Now to put our fingers on keyboard, so to speak. As our project begins to expand, we'll want to ensure a seamless developer setup experience, making the onboard process for newer devs easy and hassle free. For our local development, we'll obviously need a Rust installation and few tools to ensure we can work within the context of any project at any given time.
 
 ## Dev tools
 

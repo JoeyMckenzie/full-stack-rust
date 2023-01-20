@@ -7,4 +7,4 @@ default_to_workspace = false
 [tasks.docs]
 cwd = "./docs"
 command = "mdbook"
-args = ["serve"]
+args = ["serve", "-p", "8000"]

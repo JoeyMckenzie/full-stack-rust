@@ -11,3 +11,9 @@
   - [Defining our container](./getting-started/5-defining-our-container.md)
   - [Customizing our container](./getting-started/6-customizing-our-container.md)
   - [Verifying our environment](./getting-started/7-verifying-our-environment.md)
+
+# Persistence
+
+- [Defining our domain](./modeling-the-domain/1-defining-our-domain.md)
+- [Setting up PlanetScale](./modeling-the-domain/2-setting-up-planetscale.md)
+- [Adding migrations](./modeling-the-domain/3-adding-migrations.md)

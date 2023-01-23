@@ -1,0 +1,34 @@
+name: Deploy docs
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@master
+
+      - name: Install rust toolchain
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Install cargo-make
+        run: cargo install --debug cargo-make
+
+      - name: Build docs
+        run: cargo make docs-build
+
+      - name: Publish to netlify
+        uses: netlify/actions/cli@master
+        with:
+          args: deploy --dir=docs/book
+        env:
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}

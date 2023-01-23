@@ -1,5 +1,7 @@
 # Fullstack Rust
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a087d1a2-fb0b-4749-bd3b-f9dcc18ca347/deploy-status)](https://app.netlify.com/sites/fullstackrust/deploys)
+
 Welcome to Fullstack Rust, an introduction to building fullstack web applications written entirely in Rust! Before we start our journey, we'll discuss a bit about what it means to be fullstack, why we'd choose Rust to do such a task, and what we'll build over the course of this series.
 
 At any point in time should you need a reference to the source code or material covered in a chapter, feel free to explore any of the save point branches meant to serve as a time-snapshot of the code at any point during our development.

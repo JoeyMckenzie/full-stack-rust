@@ -19,7 +19,7 @@ jobs:
       - name: Install rust toolchain
         uses: dtolnay/rust-toolchain@stable
 
-      - name: Install cargo-make
+      - name: Install mdbook
         run: cargo install mdbook
 
       - name: Build docs
@@ -29,7 +29,7 @@ jobs:
       - name: Publish to netlify
         uses: netlify/actions/cli@master
         with:
-          args: deploy --dir=docs/book
+          args: deploy --dir=docs/book --prod
         env:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}

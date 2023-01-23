@@ -20,10 +20,11 @@ jobs:
         uses: dtolnay/rust-toolchain@stable
 
       - name: Install cargo-make
-        run: cargo install --debug cargo-make
+        run: cargo install mdbook
 
       - name: Build docs
-        run: cargo make docs-build
+        run: mdbook build
+        working-directory: docs
 
       - name: Publish to netlify
         uses: netlify/actions/cli@master

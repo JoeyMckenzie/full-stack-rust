@@ -9,8 +9,3 @@ install_crate = "mdbook"
 cwd = "docs"
 command = "mdbook"
 args = ["serve", "-p", "8000"]
-
-[tasks.docs-ci]
-install_crate = "mdbook"
-command = "mdbook"
-args = ["build"]

@@ -1,12 +1,12 @@
 # Setting up PlanetScale
 
-With [PlanetScale](https://app.planetscale.com/joeymckenzie), we can manage our databases in a serverless fashion in a similar fashion to how we manage our code. PlanetScale offers the option to develop our database like we develop our code with branches, allowing us to follow a [trunk-based approach](https://trunkbaseddevelopment.com/) as we update, manage, and release changes to our database.
+With [PlanetScale](https://app.planetscale.com/joeymckenzie), we can manage our databases in a serverless fashion in a similar to how we manage our code. PlanetScale offers the option to develop our database like we develop our code with branches, allowing us to follow a [trunk-based approach](https://trunkbaseddevelopment.com/) as we update, manage, and release changes to our database.
 
 In short, PlanetScale will allow us to:
 
 - Host a production database on our `main` branch
 - Host a development/test database on our `dev` branch
-- Make changes to our schema on our `dev`
+- Make changes to our schema on our `dev` branch
 - Merge those changes into our `main` branch
 
 For many of us, this is a familiar workflow when working with source code - let's do the same with our databases!

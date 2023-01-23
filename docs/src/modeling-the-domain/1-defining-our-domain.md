@@ -21,7 +21,7 @@ Starting at the most atomic layer of our stack, the database, we can see we'll n
 - `users` with the associated properties:
   - `id` - a string UUID as our primary key
   - `created_at` - a UTC timestamp of the blog's creation date
-  - `username` - a limited-length text field
+  - `username` - a **unique** limited-length text field
   - `password` - a limited-length text field... that's **not** plain text
 
 - `blogs` with the associated properties:
@@ -30,13 +30,20 @@ Starting at the most atomic layer of our stack, the database, we can see we'll n
   - `title` - a limited-length text field
   - `content` - a max-length text field
   - `author_id` - a foreign key relation to the `users` table
+  - `slug` - a public-facing identifier generated based on the blog title
 
 - `comments` with the associated properties:
   - `id` - a string UUID as our primary key
   - `created_at` - a UTC timestamp of the blog's creation date
-  - `text` - a limited-length text field
+  - `content` - a limited-length text field
   - `author_id` - a foreign key relation to the `users` table
   - `blog_id` - a foreign key relation to the `blogs` table
+
+Our schema should look roughly like the following:
+
+![Example schema](example_schema.png)
+
+One user can have many blogs, one blog can have many comments, and one user can author many comments. We'll keep our schema simple for now, limiting ourselves to just one-to-many relationships.
 
 Our Rust code should reflect the data we'll be working with outlined above, including `struct`s to house data pulled out of the database in various forms and response models our UI code can consume to display on a web page.
 

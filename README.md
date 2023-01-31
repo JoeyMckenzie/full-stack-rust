@@ -2,7 +2,7 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/a087d1a2-fb0b-4749-bd3b-f9dcc18ca347/deploy-status)](https://app.netlify.com/sites/fullstackrust/deploys)
 
-Welcome to Fullstack Rust, an introduction to building fullstack web applications written entirely in Rust! Before we start our journey, we'll discuss a bit about what it means to be fullstack, why we'd choose Rust to do such a task, and what we'll build over the course of this series.
+Welcome to Fullstack Rust, an introduction to building full stack web applications written entirely in Rust! Before we start our journey, we'll discuss a bit about what it means to be full stack, why we'd choose Rust to do such a task, and what we'll build throughout this series.
 
 At any point in time should you need a reference to the source code or material covered in a chapter, feel free to explore any of the save point branches meant to serve as a time-snapshot of the code at any point during our development.
 
@@ -23,15 +23,15 @@ In the traditional sense, a fullstack web application is a single experience tha
 - Data access components, providing the **data access layer**
 - Miscellaneous infrastructure components, providing **cross-cutting concerns** utilized by each layer
 
-Bundled together, these components form, more or less, what is commonly referred to as a fullstack application. Fullstack web application development can be found across many different language ecosystems (ASP.NET MVC, RoR, Django, etc.) with the goal of providing developers an experience typically driven by their language ecosystem of choice. 
+Bundled together, these components form, more or less, what is commonly referred to as a fullstack application. Fullstack web application development can be found across many different language ecosystems (ASP.NET MVC, RoR, Django, etc.) with the goal of providing developers an experience typically driven by their language ecosystem of choice.
 
 I'm of the opinion the term "fullstack" is a bit of a misnomer for the modern developer - many of us, at some point in our careers, have worked on, or inevitably _will_ work on, projects for organizations that require us to delve into the depths of the front and backend, profile pesky queries in our database, modifying IoC Terraform files in charge of deploying our services, etc. The point being that fullstack development ties the individual pieces of software development together to form a single user experience.
 
 ## Why Rust?
 
-There are *many* articles, blog posts, and tech talks that highlight Rust's strengths, weaknesses, and tradeoffs from other language ecosystems authored by individuals much more qualified than myself to answer that question. A quick search on the interwebs can unearth a plethora of information in regards as to why we would use Rust for web application development at every level of the stack (in the most basic form). I'll defer to said authors and individuals to provide more insight to the reader's interested in an answer.
+There are _many_ articles, blog posts, and tech talks that highlight Rust's strengths, weaknesses, and tradeoffs from other language ecosystems authored by individuals much more qualified than myself to answer that question. A quick search on the interwebs can unearth a plethora of information in regards as to why we would use Rust for web application development at every level of the stack (in the most basic form). I'll defer to said authors and individuals to provide more insight to the reader's interested in an answer.
 
-What I *can* say about Rust, as a primarily career TypeScript/.NET developer, is that Rust provides language constructs and paradigms that those languages simply lack or have been retrofitted over the years:
+What I _can_ say about Rust, as a primarily career TypeScript/.NET developer, is that Rust provides language constructs and paradigms that those languages simply lack or have been retrofitted over the years:
 
 - One of the most robust type systems among many popular languages
 - Expansive crate ecosystem providing solutions to many common problems that arise during web application development
@@ -41,7 +41,7 @@ While the list could go on, I'll put it simply in that Rust has been a love lang
 
 ## What are we building?
 
-Throughout the series, we'll focus on building... *drumroll please*... a blog!
+Throughout the series, we'll focus on building... _drumroll please_... a blog!
 
 Yes, yes, I know... while a simple blog may not be the most fascinating application topic, it allows us to get our hands dirty in all of our predefined application layers:
 

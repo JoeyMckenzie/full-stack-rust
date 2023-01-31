@@ -5,7 +5,6 @@ CARGO_MAKE_EXTEND_WORKSPACE_MAKEFILE = true
 default_to_workspace = false
 
 [tasks.docs]
-install_crate = "mdbook"
 cwd = "docs"
 command = "mdbook"
 args = ["serve", "-p", "8000"]

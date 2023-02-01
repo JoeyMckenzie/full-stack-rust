@@ -17,10 +17,11 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 RUN sudo corepack enable
 
 # Add trunk, sqlx, and other dependencies
-RUN cargo install trunk \
-    && cargo install cargo-make \
-    && cargo install sqlx-cli --no-default-features --features native-tls,mysql \
-    && cargo install mdbook
+RUN cargo install --locked trunk \
+    && cargo install --locked cargo-make \
+    && cargo install --locked sqlx-cli --no-default-features --features native-tls,mysql \
+    && cargo install --locked mdbook \
+    && cargo install --locked cargo-generate
 
 # Setup PlanetScale versions to install into the container
 ARG PSCALE_VERSION=0.125.0

@@ -55,7 +55,7 @@ Now it's just a matter of punching in our PlanetScale credentials and connecting
 
 > PlanetScale requires connection to your database over SSL, so be sure to check the option for secure connections with your SQL tool of choice
 
-Once connected, I suggest naming your connection after the database and environment you're connected - for our case, that would look something like `full-stack-rust (dev)`. Let's add a connection to our `main` branch database as well while we're add it. Similar to the above, locate your connection string to the `main` branch and punch in the credentials. Once we've connected, our console should look something like this:
+Once connected, I suggest naming your connection after the database and environment you're connected - for our case, that would look something like `full-stack-rust (dev)`. Let's add a connection to our `main` branch database as well while we're at it. Similar to the above, locate your connection string to the `main` branch and punch in the credentials. Once we've connected, our console should look something like this:
 
 ![MySQL database](./mysql_databases.png)
 
@@ -95,6 +95,8 @@ CREATE TABLE
         KEY blog_id_idx (blog_id)
     );
 ```
+
+> You may notice the lack of `FOREIGN KEY` contstraints - PlanetScale does not allow for foreign key constraints as a _design choice_, not necessarily out of lack of functionality. Read more [here](https://planetscale.com/docs/learn/operating-without-foreign-key-constraints).
 
 Before we run migrations, as we _may_ evolve our schema over time, let's update our `Makefile.toml` to include a sqlx migration command:
 

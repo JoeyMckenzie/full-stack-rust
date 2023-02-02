@@ -14,11 +14,11 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get autoremove -y \
     && apt-get clean -y
 
-# Add the leptos CLIm, sqlx, and other dependencies
-RUN cargo install trunk \
-    && cargo install cargo-make \
-    && cargo install sqlx-cli --no-default-features --features native-tls,mysql \
-    && cargo install mdbook
+# Add trunk, sqlx, and other dependencies
+RUN cargo install --locked trunk \
+    && cargo install --locked cargo-make \
+    && cargo install --locked sqlx-cli --no-default-features --features native-tls,mysql \
+    && cargo install --locked mdbook
 
 # Optional: if you're getting errors regarding missing wasm target, add it
 RUN rustup target add wasm32-unknown-unknown
@@ -32,9 +32,9 @@ Let's tell the dev container runner to use our `Dockerfile` instead of the prede
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/rust
 {
-	"name": "Full stack Rust",
-	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"dockerFile": "Dockerfile",
+ "name": "Full stack Rust",
+ // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+ "dockerFile": "Dockerfile",
     
     // Other configurations...
 }

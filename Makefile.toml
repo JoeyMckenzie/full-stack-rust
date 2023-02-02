@@ -8,3 +8,13 @@ default_to_workspace = false
 cwd = "docs"
 command = "mdbook"
 args = ["serve", "-p", "8000"]
+
+[tasks.add-migration]
+cwd = "crates/blog-core"
+command = "sqlx"
+args = ["migrate", "add", "${@}"]
+
+[tasks.migrate]
+cwd = "crates/blog-core"
+command = "sqlx"
+args = ["migrate", "run"]

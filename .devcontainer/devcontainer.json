@@ -22,6 +22,7 @@
 				"rust-lang.rust-analyzer",
 				"tamasfe.even-better-toml",
 				"aaron-bond.better-comments",
+				"cweijan.vscode-mysql-client2",
 				// Optional: if you're not using grammarly, enable the spell checker plugin
 				// "streetsidesoftware.code-spell-checker",
 				// Optional: if you use grammarly, enable the plugin 

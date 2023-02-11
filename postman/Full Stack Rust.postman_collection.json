@@ -1,0 +1,236 @@
+{
+	"info": {
+		"_postman_id": "16b80ce1-58f4-4333-ae00-6b0d790d4a12",
+		"name": "Full Stack Rust",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4897509"
+	},
+	"item": [
+		{
+			"name": "Blogs",
+			"item": [
+				{
+					"name": "Search blogs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/blogs?limit=5",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"blogs"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve blog",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = pm.response.json()\r",
+									"\r",
+									"tests['Response contains \"user\" property'] = response.hasOwnProperty('blog');\r",
+									"\r",
+									"const blog = response.blog || {}\r",
+									"\r",
+									"tests['Blog contains \"title\"'] = blog.hasOwnProperty('title')\r",
+									"tests['Blog contains \"slug\"'] = blog.hasOwnProperty('slug')\r",
+									"tests['Blog contains \"created_at\"'] = blog.hasOwnProperty('created_at')\r",
+									"tests['Blog contains \"updated_at\"'] = blog.hasOwnProperty('updated_at')\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/blogs/{{slug}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"blogs",
+								"{{slug}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create blog",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = pm.response.json()\r",
+									"\r",
+									"tests['Response contains \"user\" property'] = response.hasOwnProperty('blog');\r",
+									"\r",
+									"const blog = response.blog || {}\r",
+									"\r",
+									"tests['Blog contains \"title\"'] = blog.hasOwnProperty('title')\r",
+									"tests['Blog contains \"slug\"'] = blog.hasOwnProperty('slug')\r",
+									"tests['Blog contains \"created_at\"'] = blog.hasOwnProperty('created_at')\r",
+									"tests['Blog contains \"updated_at\"'] = blog.hasOwnProperty('updated_at')\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authentication",
+								"value": "Bearer {{authToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"An awesome blog post\",\r\n    \"content\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/blogs",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"blogs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update blog",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = pm.response.json()\r",
+									"\r",
+									"tests['Response contains \"user\" property'] = response.hasOwnProperty('blog');\r",
+									"\r",
+									"const blog = response.blog || {}\r",
+									"\r",
+									"tests['Blog contains \"title\"'] = blog.hasOwnProperty('title')\r",
+									"tests['Blog contains \"slug\"'] = blog.hasOwnProperty('slug')\r",
+									"tests['Blog contains \"created_at\"'] = blog.hasOwnProperty('created_at')\r",
+									"tests['Blog contains \"updated_at\"'] = blog.hasOwnProperty('updated_at')\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authentication",
+								"value": "Bearer {{authToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"An awesome blog post\",\r\n    \"content\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/blogs",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"blogs"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var responseJSON = JSON.parse(responseBody);\r",
+									"const response = pm.response.json();\r",
+									"\r",
+									"tests['User has \"access_token\" property'] = response.hasOwnProperty('access_token');\r",
+									"\r",
+									"if(tests['User has \"access_token\" property']){\r",
+									"    pm.environment.set(\"token\", response.token);\r",
+									"}\r",
+									"\r",
+									"tests['Token environment variable has been set'] = pm.environment.get('token') === response.token;\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"username\",\r\n    \"password\": \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/register",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

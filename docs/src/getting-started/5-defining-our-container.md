@@ -7,7 +7,7 @@ Okay, I _promise_ we're actually going to start writing some code now. Regardles
 In your favorite terminal, punch in the following:
 
 ```bash
-mkdir full-stack-rust && cd full-stack-rust
+mkdir full stack-rust && cd full stack-rust
 ```
 
 I'll be using VS Code for our journey here, but you're more than welcome to use the editor of your choice. VS Code has great integration with dev containers, allowing us to focus more on the code than our environment. Go ahead and install the aforementioned VS Code dev container extension, and once you've opened your newly created directory in VS Code, we'll go ahead and add some dev container files to create a container definition for the context we'll be working in.

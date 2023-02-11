@@ -2,7 +2,7 @@
 
 With our `blog-core` crate in place, let's add the necessary dependencies we'll need to help facilitate our persistence logic. Since we'll be using sqlx for migrations and thanks to our dev container setup with the sqlx-cli ready to roll, we can start writing some code! Let's initialize an empty migration that we'll use to create some tables.
 
-Since we've placed our `blog-core` library in a subdirectory, we'll need to run our sqlx migration commands from that subdirectory. That's a task will more than likely run multiple times, so let's lean on [`cargo-make`](https://github.com/sagiegurari/cargo-make) to define a runnable task to add migrations while working in the root directory of our project. We've already installed the CLI as we've included it in our dev container definition, all we need now is to add a [`Makefile.toml`](https://github.com/JoeyMckenzie/full-stack-rust/blob/main/Makefile.toml) to our repository root:
+Since we've placed our `blog-core` library in a subdirectory, we'll need to run our sqlx migration commands from that subdirectory. That's a task will more than likely run multiple times, so let's lean on [`cargo-make`](https://github.com/sagiegurari/cargo-make) to define a runnable task to add migrations while working in the root directory of our project. We've already installed the CLI as we've included it in our dev container definition, all we need now is to add a [`Makefile.toml`](https://github.com/JoeyMckenzie/full stack-rust/blob/main/Makefile.toml) to our repository root:
 
 ```toml
 [env] ## tells cargo make that we're in the context of a Cargo workspace
@@ -55,7 +55,7 @@ Now it's just a matter of punching in our PlanetScale credentials and connecting
 
 > PlanetScale requires connection to your database over SSL, so be sure to check the option for secure connections with your SQL tool of choice
 
-Once connected, I suggest naming your connection after the database and environment you're connected - for our case, that would look something like `full-stack-rust (dev)`. Let's add a connection to our `main` branch database as well while we're at it. Similar to the above, locate your connection string to the `main` branch and punch in the credentials. Once we've connected, our console should look something like this:
+Once connected, I suggest naming your connection after the database and environment you're connected - for our case, that would look something like `full stack-rust (dev)`. Let's add a connection to our `main` branch database as well while we're at it. Similar to the above, locate your connection string to the `main` branch and punch in the credentials. Once we've connected, our console should look something like this:
 
 ![MySQL database](./mysql_databases.png)
 
@@ -80,7 +80,7 @@ CREATE TABLE
         content TEXT NOT NULL,
         author_id BINARY(16) NOT NULL,
         slug TEXT NOT NULL,
-        KEY author_id_idx (author_id)
+        KEY blog_author_idx (id, author_id)
     );
 
 CREATE TABLE
@@ -91,8 +91,7 @@ CREATE TABLE
         content TEXT NOT NULL,
         author_id BINARY(16) NOT NULL,
         blog_id BINARY(16) NOT NULL,
-        KEY author_id_idx (author_id),
-        KEY blog_id_idx (blog_id)
+        KEY comment_author_blog_idx (id, author_id, blog_id)
     );
 ```
 

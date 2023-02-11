@@ -16,7 +16,7 @@ CREATE TABLE
         content TEXT NOT NULL,
         author_id BINARY(16) NOT NULL,
         slug TEXT NOT NULL,
-        KEY author_id_idx (author_id)
+        KEY blog_author_idx (id, author_id)
     );
 
 CREATE TABLE
@@ -27,6 +27,5 @@ CREATE TABLE
         content TEXT NOT NULL,
         author_id BINARY(16) NOT NULL,
         blog_id BINARY(16) NOT NULL,
-        KEY author_id_idx (author_id),
-        KEY blog_id_idx (blog_id)
+        KEY comment_author_blog_idx (id, author_id, blog_id)
     );
